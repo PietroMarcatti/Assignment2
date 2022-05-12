@@ -90,6 +90,15 @@
           </executions>
         </plugin>
         <!-- FINE PARTE DI CHECKSTYLE -->
+
+        <!-- INIZIO CODE-COVERAGE -->
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.9-SNAPSHOT</version>
+        </plugin>
+        <!-- FINE CODE-COVERAGE -->
+        
       </plugins>
     </pluginManagement>
   </build>
