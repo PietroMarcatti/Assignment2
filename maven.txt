@@ -1,0 +1,3 @@
+ mvn archetype:generate -DgroupId=it.unipd.mtss -DartifactId= e-shop-manager
+-DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+-DinteractiveMode=false
