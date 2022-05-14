@@ -1,0 +1,18 @@
+////////////////////////////////////////////////////////////////////
+// Pietro Marcatti 1226283
+// Davide Spada 1220539
+////////////////////////////////////////////////////////////////////
+
+package it.unipd.mtss;
+
+import java.util.Date;
+
+public interface User {
+
+	long getId();
+
+	String getName();
+
+	DateTime getDataNascita();
+
+}
