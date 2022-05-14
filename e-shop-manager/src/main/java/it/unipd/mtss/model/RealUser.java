@@ -3,9 +3,9 @@
 // Davide Spada 1220539
 ////////////////////////////////////////////////////////////////////
 
-package it.unipd.mtss;
+package it.unipd.mtss.model;
 
-import java.utils.date*;
+import java.util.Calendar;
 
 public class RealUser implements User {
 
@@ -13,9 +13,9 @@ public class RealUser implements User {
 
 	private String name;
 
-	private Date dataNascita;
+	private Calendar dataNascita;
 
-	public ClientImpl(long id, String name, Date dataNascita) {
+	public RealUser(long id, String name, Calendar dataNascita) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -40,11 +40,11 @@ public class RealUser implements User {
 	}
 
 	@Override
-	public Date getDataNascita() {
+	public Calendar getDataNascita() {
 		return dataNascita;
 	}
 
-	public void setDataNascita(Date dataNascita) {
+	public void setDataNascita(Calendar dataNascita) {
 		this.dataNascita = dataNascita;
 	}
 

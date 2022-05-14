@@ -3,13 +3,16 @@
 // Davide Spada 1220539
 ////////////////////////////////////////////////////////////////////
 
-package it.unipd.mtss;
+package it.unipd.mtss.model;
 
-public interface EItem {
+import java.util.Calendar;
+
+public interface User {
+
+	long getId();
 
 	String getName();
 
-	EItemType getEItemType();
+	Calendar getDataNascita();
 
-	double getPrice();
 }

@@ -3,7 +3,7 @@
 // Davide Spada 1220539
 ////////////////////////////////////////////////////////////////////
 
-package it.unipd.mtss;
+package it.unipd.mtss.model;
 
 public class RealEItem implements EItem {
 
@@ -30,7 +30,7 @@ public class RealEItem implements EItem {
 	}
 
 	@Override
-	public EItemType getType() {
+	public EItemType getEItemType() {
 		return type;
 	}
 

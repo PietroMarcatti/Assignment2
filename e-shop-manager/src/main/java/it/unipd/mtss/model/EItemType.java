@@ -3,7 +3,7 @@
 // Davide Spada 1220539
 ////////////////////////////////////////////////////////////////////
 
-package it.unipd.mtss;
+package it.unipd.mtss.model;
 
 public enum EItemType {
 	MOTHERBOARD("MB"), PROCESSOR("CPU"), MOUSE("MS"), KEYBOARD("KB");

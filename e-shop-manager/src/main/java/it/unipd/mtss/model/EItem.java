@@ -3,16 +3,13 @@
 // Davide Spada 1220539
 ////////////////////////////////////////////////////////////////////
 
-package it.unipd.mtss;
+package it.unipd.mtss.model;
 
-import java.util.Date;
-
-public interface User {
-
-	long getId();
+public interface EItem {
 
 	String getName();
 
-	DateTime getDataNascita();
+	EItemType getEItemType();
 
+	double getPrice();
 }
