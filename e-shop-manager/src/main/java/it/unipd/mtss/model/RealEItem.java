@@ -34,7 +34,7 @@ public class RealEItem implements EItem {
 		return type;
 	}
 
-	public void setType(EItemType type) {
+	public void setEItemType(EItemType type) {
 		this.type = type;
 	}
 

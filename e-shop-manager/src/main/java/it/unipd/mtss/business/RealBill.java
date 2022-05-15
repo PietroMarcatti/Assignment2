@@ -31,11 +31,11 @@ public class RealBill implements Bill {
 		double prezzoTotaleProvvisorio = 0;
 
 		for (EItem item : itemsOrdered){
-			switch(item.getEItemType().toString()){
-				case "MB": numeroItem[0]+=1;break;
-				case "CPU": numeroItem[1]+=1;break;
-				case "MS": numeroItem[2]+=1;break;
-				case "KB": numeroItem[3]+=1;break;
+			switch(item.getEItemType()){
+				case MOTHERBOARD: numeroItem[0]+=1;break;
+				case PROCESSOR: numeroItem[1]+=1;break;
+				case MOUSE: numeroItem[2]+=1;break;
+				case KEYBOARD: numeroItem[3]+=1;break;
 				default: break;
 			}
 			prezzoTotaleProvvisorio+=item.getPrice();
@@ -46,7 +46,7 @@ public class RealBill implements Bill {
 		if(numeroItem[2]>10){
 			prezzoTotaleProvvisorio -= regaloMouseMenoCaro(itemsOrdered);
 		}
-		if(numeroItem[2]==numeroItem[3]){
+		if(numeroItem[2]>0 && numeroItem[2]==numeroItem[3]){
 			prezzoTotaleProvvisorio -= regaloMouseTastieraMenoCaro(itemsOrdered);
 		}
 		if(prezzoTotaleProvvisorio>1000){
