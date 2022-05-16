@@ -7,9 +7,9 @@ package it.unipd.mtss.model;
 
 public interface EItem {
 
-	String getName();
+    String getName();
 
-	EItemType getEItemType();
+    EItemType getEItemType();
 
-	double getPrice();
+    double getPrice();
 }

@@ -9,10 +9,10 @@ import java.util.Calendar;
 
 public interface User {
 
-	long getId();
+    long getId();
 
-	String getName();
+    String getName();
 
-	Calendar getDataNascita();
+    Calendar getDataNascita();
 
 }

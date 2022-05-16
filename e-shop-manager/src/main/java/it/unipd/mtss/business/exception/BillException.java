@@ -7,9 +7,9 @@ package it.unipd.mtss.business.exception;
 
 public class BillException extends Exception {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
 
 }

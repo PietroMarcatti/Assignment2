@@ -6,17 +6,16 @@
 package it.unipd.mtss.model;
 
 public enum EItemType {
-	MOTHERBOARD("MB"), PROCESSOR("CPU"), MOUSE("MS"), KEYBOARD("KB");
+    MOTHERBOARD("MB"), PROCESSOR("CPU"), MOUSE("MS"), KEYBOARD("KB");
 
 
-	private final String textValue;
+    private final String textValue;
 
-	EItemType(final String textValue) {
-		this.textValue = textValue;
-	}
+    EItemType(final String textValue) {
+       this.textValue = textValue;
+    }
 
-	@Override
-	public String toString() {
-		return textValue;
-	}
+    public String toString() {
+        return textValue;
+    }
 }

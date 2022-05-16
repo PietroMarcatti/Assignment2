@@ -9,43 +9,32 @@ import java.util.Calendar;
 
 public class RealUser implements User {
 
-	private long id;
+    private long id;
 
-	private String name;
+    private String name;
 
-	private Calendar dataNascita;
+    private Calendar dataNascita;
 
-	public RealUser(long id, String name, Calendar dataNascita) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.dataNascita = dataNascita;
-	}
+    public RealUser(long id, String name, Calendar dataNascita) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.dataNascita = dataNascita;
+    }
 
-	public long getId() {
-		return id;
-	}
+    @Override
+    public long getId() {
+        return id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    @Override
+    public String getName() {
+        return name;
+    }
 
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	@Override
-	public Calendar getDataNascita() {
-		return dataNascita;
-	}
-
-	public void setDataNascita(Calendar dataNascita) {
-		this.dataNascita = dataNascita;
-	}
+    @Override
+    public Calendar getDataNascita() {
+        return dataNascita;
+    }
 
 }
