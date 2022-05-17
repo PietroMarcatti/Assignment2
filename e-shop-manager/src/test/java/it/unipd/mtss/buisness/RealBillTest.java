@@ -3,7 +3,7 @@
 // Davide Spada 1220539
 ////////////////////////////////////////////////////////////////////
 
-package it.unipd.mtss;
+package it.unipd.mtss.buisness;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import it.unipd.mtss.business.Bill;
@@ -22,9 +23,18 @@ import it.unipd.mtss.model.EItemType;
 import it.unipd.mtss.model.User;
 import it.unipd.mtss.model.RealUser;
 
-public class BillTest {
+public class RealBillTest {
 
     private Bill bill = new RealBill();
+    private Calendar date;
+    private User user;
+
+    @Before
+    public void setup(){
+        date= Calendar.getInstance();
+        date.set(Calendar.YEAR,2000);
+        user = new RealUser(1, "Davide", date);
+    }
 
     @Test
     public void getOrderPrice_ScontoProcessoreMenoCaroTest() throws BillException{
@@ -38,9 +48,6 @@ public class BillTest {
             new RealEItem("Prodotto", EItemType.PROCESSOR, 120.3),
             new RealEItem("Prodotto", EItemType.PROCESSOR, 22.3),
         };
-        Calendar date= Calendar.getInstance();
-        date.set(Calendar.YEAR,2000);
-        User user = new RealUser(1, "Davide", date);
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 374.3;
         double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
@@ -65,9 +72,7 @@ public class BillTest {
             new RealEItem("Prodotto", EItemType.MOUSE, 20.0),
             new RealEItem("Prodotto", EItemType.MOUSE, 20.0),
         };
-        Calendar date= Calendar.getInstance();
-        date.set(Calendar.YEAR,2000);
-        User user = new RealUser(1, "Davide", date);
+        
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 240.0;
         double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
@@ -91,9 +96,7 @@ public class BillTest {
             new RealEItem("Prodotto", EItemType.MOUSE, 20.0),
             new RealEItem("Prodotto", EItemType.MOUSE, 20.0),
         };
-        Calendar date= Calendar.getInstance();
-        date.set(Calendar.YEAR,2000);
-        User user = new RealUser(1, "Davide", date);
+        
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 220.0;
         double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
@@ -106,9 +109,7 @@ public class BillTest {
         EItem[] items = {
             new RealEItem("Prodotto", EItemType.KEYBOARD, 1200.0),
         };
-        Calendar date= Calendar.getInstance();
-        date.set(Calendar.YEAR,2000);
-        User user = new RealUser(1, "Davide", date);
+        
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 1080;
         double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
@@ -159,9 +160,7 @@ public class BillTest {
             new RealEItem("Prodotto", EItemType.MOUSE, 20.0),
             new RealEItem("Prodotto", EItemType.MOUSE, 20.0),
         };
-        Calendar date= Calendar.getInstance();
-        date.set(Calendar.YEAR,2000);
-        User user = new RealUser(1, "Davide", date);
+        
         List<EItem> itemsOrdered = createEItemList(items);
         @SuppressWarnings("unused")
         double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
@@ -172,9 +171,7 @@ public class BillTest {
         EItem[] items = {
             new RealEItem("Prodotto", EItemType.KEYBOARD, 8.0),
         };
-        Calendar date= Calendar.getInstance();
-        date.set(Calendar.YEAR,2000);
-        User user = new RealUser(1, "Davide", date);
+
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 10;
         double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
@@ -187,9 +184,7 @@ public class BillTest {
         EItem[] items = {
             new RealEItem("Prodotto", EItemType.KEYBOARD, 12.0),
         };
-        Calendar date= Calendar.getInstance();
-        date.set(Calendar.YEAR,2010);
-        User user = new RealUser(1, "Davide", date);
+
         List<EItem> itemsOrdered = createEItemList(items);
         double actual=0;
         Calendar discountHours= Calendar.getInstance();
