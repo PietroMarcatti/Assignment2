@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="it.unipd.mtss.BillTest" time="0.027" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="it.unipd.mtss.BillTest" time="0.047" tests="7" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IT"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-18.0.1.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\pietr\AppData\Local\Temp\surefire992843507135343568\surefirebooter17059562847587725170.jar C:\Users\pietr\AppData\Local\Temp\surefire992843507135343568 2022-05-15T17-55-41_808-jvmRun1 surefire12424016813669688890tmp surefire_07187908345482024955tmp"/>
+    <property name="sun.java.command" value="C:\Users\pietr\AppData\Local\Temp\surefire3027278003872556444\surefirebooter12970927869676186965.jar C:\Users\pietr\AppData\Local\Temp\surefire3027278003872556444 2022-05-16T23-20-52_113-jvmRun1 surefire6799748649425469425tmp surefire_02953558802363070103tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="c:\Users\pietr\OneDrive\Documenti\GitHub\Assignment2\Assignment2\e-shop-manager\target\test-classes;c:\Users\pietr\OneDrive\Documenti\GitHub\Assignment2\Assignment2\e-shop-manager\target\classes;C:\Users\pietr\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\pietr\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\pietr\AppData\Local\Temp\surefire992843507135343568\surefirebooter17059562847587725170.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\pietr\AppData\Local\Temp\surefire3027278003872556444\surefirebooter12970927869676186965.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="18.0.1.1+2-6"/>
@@ -61,5 +61,31 @@
   <testcase name="getOrderPrice_regaloMouseMenoCaroTest" classname="it.unipd.mtss.BillTest" time="0"/>
   <testcase name="getOrderPrice_ScontoProcessoreMenoCaroTest" classname="it.unipd.mtss.BillTest" time="0"/>
   <testcase name="getOrderPrice_regaloMouseTastieraMenoCaroTest" classname="it.unipd.mtss.BillTest" time="0"/>
-  <testcase name="getOrderPrice_numeroDiProdottiEccessivoTest" classname="it.unipd.mtss.BillTest" time="0.001"/>
+  <testcase name="getOrderPrice_regaloPerMinorenneCasualeTest" classname="it.unipd.mtss.BillTest" time="0.008">
+    <failure message="expected:&lt;240.0&gt; but was:&lt;228.0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<240.0> but was:<228.0>
+	at it.unipd.mtss.BillTest.getOrderPrice_regaloPerMinorenneCasualeTest(BillTest.java:201)
+]]></failure>
+    <system-out><![CDATA[Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+Numero: 1
+]]></system-out>
+  </testcase>
+  <testcase name="getOrderPrice_numeroDiProdottiEccessivoTest" classname="it.unipd.mtss.BillTest" time="0"/>
 </testsuite>

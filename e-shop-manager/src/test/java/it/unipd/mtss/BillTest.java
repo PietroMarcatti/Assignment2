@@ -43,7 +43,7 @@ public class BillTest {
         User user = new RealUser(1, "Davide", date);
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 374.3;
-        double actual = bill.getOrderPrice(itemsOrdered, user);
+        double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
 
         assertEquals(expected, actual, 0.01);
     }
@@ -70,7 +70,7 @@ public class BillTest {
         User user = new RealUser(1, "Davide", date);
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 240.0;
-        double actual = bill.getOrderPrice(itemsOrdered, user);
+        double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
 
         assertEquals(expected, actual, 0.001);
     }
@@ -96,7 +96,7 @@ public class BillTest {
         User user = new RealUser(1, "Davide", date);
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 220.0;
-        double actual = bill.getOrderPrice(itemsOrdered, user);
+        double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
 
         assertEquals(expected, actual, 0.001);
     }
@@ -111,7 +111,7 @@ public class BillTest {
         User user = new RealUser(1, "Davide", date);
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 1080;
-        double actual = bill.getOrderPrice(itemsOrdered, user);
+        double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
 
         assertEquals(expected, actual, 0.001);
     }
@@ -164,7 +164,7 @@ public class BillTest {
         User user = new RealUser(1, "Davide", date);
         List<EItem> itemsOrdered = createEItemList(items);
         @SuppressWarnings("unused")
-        double actual = bill.getOrderPrice(itemsOrdered, user);
+        double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
     }
 
     @Test
@@ -177,8 +177,27 @@ public class BillTest {
         User user = new RealUser(1, "Davide", date);
         List<EItem> itemsOrdered = createEItemList(items);
         double expected = 10;
-        double actual = bill.getOrderPrice(itemsOrdered, user);
+        double actual = bill.getOrderPrice(itemsOrdered, user, Calendar.getInstance());
 
+        assertEquals(expected, actual, 0.001);
+    }
+
+    @Test
+    public void getOrderPrice_regaloPerMinorenneCasualeTest() throws BillException{
+        EItem[] items = {
+            new RealEItem("Prodotto", EItemType.KEYBOARD, 12.0),
+        };
+        Calendar date= Calendar.getInstance();
+        date.set(Calendar.YEAR,2010);
+        User user = new RealUser(1, "Davide", date);
+        List<EItem> itemsOrdered = createEItemList(items);
+        double actual=0;
+        Calendar discountHours= Calendar.getInstance();
+        discountHours.set(Calendar.HOUR_OF_DAY,18);
+        for(int i = 0; i<20; i++){
+            actual += bill.getOrderPrice(itemsOrdered, user, discountHours);
+        }
+        double expected = 240;
         assertEquals(expected, actual, 0.001);
     }
 

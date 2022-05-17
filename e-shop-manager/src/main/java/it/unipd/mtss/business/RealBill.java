@@ -19,18 +19,21 @@ public class RealBill implements Bill {
 
     private int ordiniRegalati =0;
     private long[] idUtenti = new long[10];
+    Random rand = new Random();
+    
     /*
      * (non-Javadoc)
      * 
      * @see com.clarity.model.ClientBO#getClientProductsSum(java.util.List)
      */
     @Override
-    public double getOrderPrice(List<EItem> itemsOrdered, User user)
+    public double getOrderPrice(List<EItem> itemsOrdered, User user, Calendar time)
     throws BillException {
-        int hours = Calendar.HOUR_OF_DAY;
+        int hours = time.get(Calendar.HOUR_OF_DAY);
         int[] numeroItem = new int[4];
         double prezzoTotaleProvvisorio = 0;
-
+        rand.setSeed(0);
+        
         for (EItem item : itemsOrdered){
             switch(item.getEItemType()){
                 case MOTHERBOARD: numeroItem[0]+=1;break;
@@ -109,13 +112,14 @@ public class RealBill implements Bill {
     }
 
     private Boolean regaloPerMinorenne(User user){
-        Random rand = new Random();
+        
         Calendar now = Calendar.getInstance();
         long diff= Duration
         .between(user.getDataNascita().toInstant(), now.toInstant())
         .toDays()/365;
-        
-        if(ordiniRegalati < 10 && rand.nextInt(2) == 1 && diff<18){
+        int numero =rand.nextInt(2);
+        System.out.println("Numero: "+numero);
+        if(ordiniRegalati < 10 && numero==1 && diff<18){
             Boolean trovato = false;
             for(long id : idUtenti){
                 if(id == user.getId()){
