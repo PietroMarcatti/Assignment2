@@ -20,8 +20,3 @@ jobs:
         run: mvn -B install --file e-shop-manager/pom.xml
       - name: Test(JaCoCo)
         run: mvn test jacoco:report --file e-shop-manager/pom.xml
-    
-      - name: Codecov push
-        uses: codecov/codecov-action@v3
-        with:
-            fail_ci_if_error: true
