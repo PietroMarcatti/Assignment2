@@ -13,6 +13,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+
+
 public class RealUserTest {
 
     private Calendar date;
@@ -22,7 +24,22 @@ public class RealUserTest {
     public void setup(){
         date= Calendar.getInstance();
         date.set(Calendar.YEAR,2000);
-        user = new RealUser(1, "Davide", date);
+        user= new RealUser(new Long(1), "Davide", date);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ConstructonIdNull_throwsExceptions(){
+        new RealUser(null, "Davide", date);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ConstructonNameNull_throwsExceptions(){
+        new RealUser(new Long(1), null, date);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ConstructonDateNull_throwsExceptions(){
+        new RealUser(new Long(1), "Davide", null);
     }
     
     @Test

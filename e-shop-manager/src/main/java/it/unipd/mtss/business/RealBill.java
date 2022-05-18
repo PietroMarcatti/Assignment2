@@ -76,7 +76,7 @@ public class RealBill implements Bill {
         return prezzoTotaleProvvisorio;
     }
 
-    public double scontoProcessoreMenoCaro(List<EItem> itemsOrdered){
+    private double scontoProcessoreMenoCaro(List<EItem> itemsOrdered){
         double prezzoMinore = Double.POSITIVE_INFINITY;
         for (EItem item : itemsOrdered){
             if(item.getEItemType()==EItemType.PROCESSOR

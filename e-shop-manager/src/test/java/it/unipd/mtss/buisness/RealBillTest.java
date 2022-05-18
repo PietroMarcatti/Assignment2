@@ -25,15 +25,16 @@ import it.unipd.mtss.model.RealUser;
 
 public class RealBillTest {
 
-    private Bill bill = new RealBill();
+    private Bill bill;
     private Calendar date;
     private User user;
 
     @Before
     public void setup(){
+        bill = new RealBill();
         date= Calendar.getInstance();
         date.set(Calendar.YEAR,2000);
-        user = new RealUser(1, "Davide", date);
+        user = new RealUser(new Long(1), "Davide", date);
     }
 
     @Test

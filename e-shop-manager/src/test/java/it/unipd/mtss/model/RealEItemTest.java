@@ -20,6 +20,21 @@ public class RealEItemTest {
         type = EItemType.KEYBOARD;
         item = new RealEItem("Tastiera Bella", type, 13.3);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ConstructonNameNull_throwsExceptions(){
+        new RealEItem(null, type, new Double(15));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ConstructonTypeNull_throwsExceptions(){
+        new RealEItem("Tastiera Bella", null, new Double(15));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ConstructonPriceNull_throwsExceptions(){
+        new RealEItem("Tastiera Bella", type, null);
+    }
     
     @Test
     public void eitem_getEItemTypeTest() {

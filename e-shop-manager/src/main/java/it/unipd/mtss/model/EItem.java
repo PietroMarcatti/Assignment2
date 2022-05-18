@@ -11,5 +11,5 @@ public interface EItem {
 
     EItemType getEItemType();
 
-    double getPrice();
+    Double getPrice();
 }

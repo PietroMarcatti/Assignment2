@@ -9,7 +9,7 @@ import java.util.Calendar;
 
 public interface User {
 
-    long getId();
+    Long getId();
 
     String getName();
 

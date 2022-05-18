@@ -9,21 +9,29 @@ import java.util.Calendar;
 
 public class RealUser implements User {
 
-    private long id;
+    private Long id;
 
     private String name;
 
     private Calendar dataNascita;
 
-    public RealUser(long id, String name, Calendar dataNascita) {
-        super();
+    public RealUser(Long id, String name, Calendar dataNascita) {
+        if(id == null) {
+            throw new IllegalArgumentException("id nullo");
+        }
+        if(name == null) {
+            throw new IllegalArgumentException("Nome nullo non valido");
+        }
+        if(dataNascita == null) {
+            throw new IllegalArgumentException("Data nulla non valida");
+        }
         this.id = id;
         this.name = name;
         this.dataNascita = dataNascita;
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
