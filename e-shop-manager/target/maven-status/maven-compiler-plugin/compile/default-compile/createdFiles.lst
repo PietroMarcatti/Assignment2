@@ -1,2 +1,9 @@
 it\unipd\mtss\business\RealBill$1.class
+it\unipd\mtss\model\EItemType.class
+it\unipd\mtss\model\RealUser.class
 it\unipd\mtss\business\exception\BillException.class
+it\unipd\mtss\business\Bill.class
+it\unipd\mtss\model\RealEItem.class
+it\unipd\mtss\model\EItem.class
+it\unipd\mtss\business\RealBill.class
+it\unipd\mtss\model\User.class

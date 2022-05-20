@@ -19,7 +19,7 @@ public class RealBill implements Bill {
 
     private int ordiniRegalati =0;
     private long[] idUtenti = new long[10];
-    Random rand = new Random();
+    private Random rand = new Random();
     
     /*
      * (non-Javadoc)
@@ -67,7 +67,6 @@ public class RealBill implements Bill {
             if(regaloPerMinorenne(user)){
                 prezzoTotaleProvvisorio = 0;
             }
-                
         }else{
             idUtenti = new long[10];
             ordiniRegalati = 0;
@@ -119,6 +118,8 @@ public class RealBill implements Bill {
         .toDays()/365;
         int numero =rand.nextInt(2);
         System.out.println("Numero: "+numero);
+        System.out.println("Ordini regalati: "+ordiniRegalati);
+        System.out.println("Eta: "+diff);
         if(ordiniRegalati < 10 && numero==1 && diff<18){
             Boolean trovato = false;
             for(long id : idUtenti){
